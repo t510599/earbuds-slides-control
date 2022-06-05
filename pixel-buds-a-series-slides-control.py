@@ -46,7 +46,10 @@ class Controller:
             self.next_page(ev)
         elif ev.scan_code == self.scan_code.NEXT_TRACK:
             self.last_page(ev)
-        elif ev.scan_code != self.scan_code.PREV_TRACK:
+        elif ev.scan_code == self.scan_code.PREV_TRACK:
+            # we still need to lock for "previous track", so the subsequent "play/pause media" won't trigger next page
+            self.lock = True
+        else:
             # propagate all other keys
             keyboard.send(ev.name)
 
