@@ -29,5 +29,6 @@ But the scan code on your system may vary. You could use `sudo python -m keyboar
 - [x] Currently only Windows support, since I am lazy to find scan codes on other platform.
 - [x] KeyboardEvent for media controls never fires if you are currently playing media.
     - Supported by SystemMediaTransportControls on Windows with `windows-smtc.py`
+- [ ] The tap would control both slides and media at the same time on Linux.  
 
 **PR Welcome!**
