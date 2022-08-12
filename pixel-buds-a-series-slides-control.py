@@ -70,9 +70,19 @@ class Win_ScanCode(ScanCode):
 class WindowsController(Controller):
     scan_code = Win_ScanCode
 
+class Linux_ScanCode(ScanCode):
+    PLAY_PAUSE = 200
+    NEXT_TRACK = 163
+    PREV_TRACK = 165
+
+class LinuxController(Controller):
+    scan_code = Linux_ScanCode
+
 if __name__ == "__main__":
     if platform.system() == "Windows":
         controller = WindowsController()
+    elif platform.system() == "Linux":
+        controller = LinuxController()
     else:
         raise OSError("Unsupported platform '{}'".format(platform.system()))
 
