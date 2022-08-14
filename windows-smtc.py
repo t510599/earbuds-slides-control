@@ -29,7 +29,7 @@ def previous_page():
 
 
 def btn_press(sender: SystemMediaTransportControls, args: SystemMediaTransportControlsButtonPressedEventArgs):
-    # print(lock, args.button)
+    global lock
 
     match args.button:
         case SystemMediaTransportControlsButton.PLAY | SystemMediaTransportControlsButton.PAUSE:
@@ -37,7 +37,8 @@ def btn_press(sender: SystemMediaTransportControls, args: SystemMediaTransportCo
         case SystemMediaTransportControlsButton.NEXT:
             previous_page()
         case SystemMediaTransportControlsButton.PREVIOUS:
-            # do nothing
+            # lock and do nothing
+            lock = True
             pass
 
 
