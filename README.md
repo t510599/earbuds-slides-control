@@ -15,12 +15,17 @@ From now on, you won't need other's help during your presentation!
 2. `python pixel-buds-a-series-slides-control.py` (if on linux, you must run this with `sudo`)
 
 ### `windows-smtc.py` (Windows 10+ only)
-1. `pip install winsdk`
+1. `pip install winwt`
 2. `python windows-smtc.py`
 
 ## How it works
 When you tap on your earphone, it would send the media control signal to your computer.  
 It intercepts the media control button event, and it sends left/right keyboard event instead.
+
+## For Python 3.10+ Users with `windows-smtc.py`
+Official `winrt` package supports Python 3.7 ~ 3.9 only.  
+You may refer to [winsdk](https://github.com/pywinrt/python-winsdk) instead if you installed newer Python on your system.  
+You have to replace `winrt` imports in the file with `winsdk` on your own.
 
 ## For Linux Users
 The current scan code are fetched from my laptop with Ubuntu 22.04 and Arch Linux, and luckily it seemed to be same on both system.  

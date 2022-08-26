@@ -2,9 +2,9 @@ import time
 import asyncio
 import keyboard
 
-from winsdk.windows.media import \
+from winrt.windows.media import \
     SystemMediaTransportControls, SystemMediaTransportControlsButtonPressedEventArgs, SystemMediaTransportControlsButton, MediaPlaybackType
-from winsdk.windows.media.playback import MediaPlayer, MediaPlaybackState
+from winrt.windows.media.playback import MediaPlayer, MediaPlaybackState
 
 lock = False
 
