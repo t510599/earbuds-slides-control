@@ -1,6 +1,6 @@
-# Pixel-Buds-A-Series-Slides-Control
+# Earbuds-Slides-Control
 
-This simple script helps you to control your slides with your Pixel Buds A-Series!  
+This simple script helps you to control your slides with your wireless earbuds!  
 From now on, you won't need other's help during your presentation!  
 
 ## Usage
@@ -10,6 +10,7 @@ From now on, you won't need other's help during your presentation!
 
 ## Run
 ### `pixel-buds-a-series-slides-control.py`
+*Implementation for Pixel Buds A Series, but may work with other devices*
 1. `pip install keyboard`
 2. `python pixel-buds-a-series-slides-control.py` (if on linux, you must run this with `sudo`)
 
