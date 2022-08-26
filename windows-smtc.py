@@ -2,7 +2,7 @@ import time
 import asyncio
 import keyboard
 
-from config import NEXT_PAGE_KEY, PREV_PAGE_KEY
+from config import NEXT_PAGE_KEY, PREV_PAGE_KEY, START_KEY
 
 from winrt.windows.media import \
     SystemMediaTransportControls, SystemMediaTransportControlsButtonPressedEventArgs, SystemMediaTransportControlsButton, MediaPlaybackType
@@ -30,6 +30,13 @@ def previous_page():
     print("Previous Page!")
 
 
+def start_presentation():
+    global lock
+    lock = True
+    keyboard.send(START_KEY)
+    print("Start Presenataion!")
+
+
 def btn_press(sender: SystemMediaTransportControls, args: SystemMediaTransportControlsButtonPressedEventArgs):
     global lock
 
@@ -39,9 +46,7 @@ def btn_press(sender: SystemMediaTransportControls, args: SystemMediaTransportCo
         case SystemMediaTransportControlsButton.NEXT:
             previous_page()
         case SystemMediaTransportControlsButton.PREVIOUS:
-            # lock and do nothing
-            lock = True
-            pass
+            start_presentation()
 
 
 async def setup_control():

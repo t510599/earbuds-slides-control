@@ -6,7 +6,7 @@ From now on, you won't need other's help during your presentation!
 ## Usage
 - Tap Once: `Next Page` (Originally play/pause media)
 - Tap Twice: `Previous Page` (Originally next track)
-- Tap 3 times: Nothing happen (Originally previous track)
+- Tap 3 times: `Start Presentation` (Originally previous track)
 
 ## Run
 ### `pixel-buds-a-series-slides-control.py`
@@ -19,7 +19,7 @@ From now on, you won't need other's help during your presentation!
 2. `python windows-smtc.py`
 
 ## Config
-You can customize which key to sent when action occurred in `config.py`.  
+You can customize which key to sent when action occurred in `config.py`. (e.g. PowerPoint and Google Slides are using different keys to start presentation.)  
 For key format, please refer to [boppreh/keyboard](https://github.com/boppreh/keyboard#keyboard.send) manual.  
 
 ## How it works

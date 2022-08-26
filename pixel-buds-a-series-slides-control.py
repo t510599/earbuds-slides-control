@@ -2,7 +2,7 @@ import time
 import keyboard
 import platform
 
-from config import NEXT_PAGE_KEY, PREV_PAGE_KEY
+from config import NEXT_PAGE_KEY, PREV_PAGE_KEY, START_KEY
 
 # dummy class
 class ScanCode(object):
@@ -29,6 +29,10 @@ class Controller:
         self.lock = True # lock "play/pause media" once
         keyboard.send(PREV_PAGE_KEY)
 
+    def start_presenation(self, _ev: keyboard.KeyboardEvent):
+        self.lock = True
+        keyboard.send(START_KEY)
+
     def bind_hook(self):
         for code in self.keys:
             # clean up old one
@@ -49,8 +53,7 @@ class Controller:
         elif ev.scan_code == self.scan_code.NEXT_TRACK:
             self.last_page(ev)
         elif ev.scan_code == self.scan_code.PREV_TRACK:
-            # we still need to lock for "previous track", so the subsequent "play/pause media" won't trigger next page
-            self.lock = True
+            self.start_presenation(ev)
         else:
             # propagate all other keys
             keyboard.send(ev.name)
