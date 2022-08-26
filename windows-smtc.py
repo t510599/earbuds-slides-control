@@ -37,16 +37,13 @@ def start_presentation():
     print("Start Presenataion!")
 
 
-def btn_press(sender: SystemMediaTransportControls, args: SystemMediaTransportControlsButtonPressedEventArgs):
-    global lock
-
-    match args.button:
-        case SystemMediaTransportControlsButton.PLAY | SystemMediaTransportControlsButton.PAUSE:
-            next_page()
-        case SystemMediaTransportControlsButton.NEXT:
-            previous_page()
-        case SystemMediaTransportControlsButton.PREVIOUS:
-            start_presentation()
+def btn_press(_sender: SystemMediaTransportControls, args: SystemMediaTransportControlsButtonPressedEventArgs):
+    if args.button == SystemMediaTransportControlsButton.PLAY or args.button == SystemMediaTransportControlsButton.PAUSE:
+        next_page()
+    elif args.button == SystemMediaTransportControlsButton.NEXT:
+        previous_page()
+    elif args.button == SystemMediaTransportControlsButton.PREVIOUS:
+        start_presentation()
 
 
 async def setup_control():
