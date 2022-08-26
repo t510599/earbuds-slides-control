@@ -18,6 +18,10 @@ From now on, you won't need other's help during your presentation!
 1. `pip install winwt`
 2. `python windows-smtc.py`
 
+## Config
+You can customize which key to sent when action occurred in `config.py`.  
+For key format, please refer to [boppreh/keyboard](https://github.com/boppreh/keyboard#keyboard.send) manual.  
+
 ## How it works
 When you tap on your earphone, it would send the media control signal to your computer.  
 It intercepts the media control button event, and it sends left/right keyboard event instead.

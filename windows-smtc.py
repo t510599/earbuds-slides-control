@@ -2,6 +2,8 @@ import time
 import asyncio
 import keyboard
 
+from config import NEXT_PAGE_KEY, PREV_PAGE_KEY
+
 from winrt.windows.media import \
     SystemMediaTransportControls, SystemMediaTransportControlsButtonPressedEventArgs, SystemMediaTransportControlsButton, MediaPlaybackType
 from winrt.windows.media.playback import MediaPlayer, MediaPlaybackState
@@ -15,7 +17,7 @@ def next_page():
     # so we have to wait for a while to make sure this is not the one followed by "NEXT"
     time.sleep(0.5)
     if not lock:
-        keyboard.send("right")
+        keyboard.send(NEXT_PAGE_KEY)
         print("Next Page!")
 
     lock = False
@@ -24,7 +26,7 @@ def next_page():
 def previous_page():
     global lock
     lock = True
-    keyboard.send("left")
+    keyboard.send(PREV_PAGE_KEY)
     print("Previous Page!")
 
 

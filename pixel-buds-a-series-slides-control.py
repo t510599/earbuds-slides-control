@@ -2,6 +2,8 @@ import time
 import keyboard
 import platform
 
+from config import NEXT_PAGE_KEY, PREV_PAGE_KEY
+
 # dummy class
 class ScanCode(object):
     PLAY_PAUSE = None
@@ -19,13 +21,13 @@ class Controller:
 
     def next_page(self, _ev: keyboard.KeyboardEvent):
         if not self.lock:
-            keyboard.send("right")
+            keyboard.send(NEXT_PAGE_KEY)
 
         self.lock = False
 
     def last_page(self, _ev: keyboard.KeyboardEvent):
         self.lock = True # lock "play/pause media" once
-        keyboard.send("left")
+        keyboard.send(PREV_PAGE_KEY)
 
     def bind_hook(self):
         for code in self.keys:
